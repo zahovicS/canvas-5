@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<style type="text/css">
+		canvas{
+			/*no estilisar canvas con css, estilisar con js*/
+			background: url(img/fondo.png) no-repeat center top;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<canvas></canvas>
+	</center>	
+<script type="text/javascript">
+	let canva=document.querySelector("canvas");
+	let c=canva.getContext("2d");
+	canva.width=620;//DEFAULT ES 620
+	canva.height=600;//600
+	function rad(x)
+		{
+			return (Math.PI/180)*x;
+		}
+
+	function DCurva()
+	{	c.beginPath();
+		c.moveTo(350,300);
+		c.strokeStyle="white";
+									 //|no tocar|
+		c.bezierCurveTo(380,330,420,290,390,260);	
+		c.bezierCurveTo(370,220,415,200,440,220);
+		c.bezierCurveTo(470,250,505,220,490,180);
+		c.bezierCurveTo(470,140,510,120,540,140);
+		c.quadraticCurveTo(560, 145, 570, 130);
+
+		c.lineWidth=8;
+		c.lineCap="round";
+		c.stroke();
+	}
+	function circulo_borde(x,y,radx,color,grosor)
+	{
+		c.beginPath();
+		c.arc(x, y, radx, 0,rad(360));
+		c.lineWidth=grosor;
+		c.strokeStyle=color;
+		c.stroke();
+	}
+	function circulo_relleno(x,y,rady,color)
+	{
+		c.beginPath();
+		c.arc(x, y, rady, 0,rad(360));
+		c.fillStyle=color;
+		c.fill();
+	}
+
+	function tempaas()
+	{
+		c.beginPath();
+  		c.moveTo(217, 350);
+  		c.quadraticCurveTo();
+  		c.stroke();
+	}
+
+	function esquinaAzul()
+	{
+		c.beginPath();
+		c.moveTo(-1,378);
+		c.fillStyle="#00B5F6";
+		c.bezierCurveTo(0,390,40,390,55,390);
+		c.bezierCurveTo(200,410,180,360,276,430);
+		c.quadraticCurveTo(330,500,290,600);
+		//c.bezierCurveTo(270,600,270,600,248,640);
+		c.lineTo(0,600);
+		c.fill();
+	}
+	function conjuntos_circulos()
+	{
+		let x=611;
+		let x2=621;
+		let x3=631;
+		let x4=641;
+		let x5=651;
+		let x6=661;
+		let x7=671;
+		let x8=681;
+		let x9=691;
+		let x10=701;
+		let y=398;
+		let y2=408;
+		let y3=418;
+		let y4=428;
+		let y5=438;
+		let y6=448;
+		let y7=458;
+		let y8=468;
+		let y9=478;
+		let y10=488;
+		for (var i = 0; i < 21; i++)
+		{
+			circulos(x,y);
+			x-=10;
+			y+=10;
+			for (var a = 0; a < 1; a++)
+			{
+				circulos(x2,y2);
+				x2-=10;
+				y2+=10;
+				for (var e = 0; e < 1; e++)
+				{
+					circulos(x3,y3);
+					x3-=10;
+					y3+=10;
+					for (var o = 0; o < 1; o++)
+					{
+						circulos(x4,y4);
+						x4-=10;
+						y4+=10;
+						for (var u = 0; u < 1; u++)
+						{
+							circulos(x5,y5);
+							x5-=10;
+							y5+=10;
+							for (var aa = 0; aa < 1; aa++)
+							{
+								circulos(x6,y6);
+								x6-=10;
+								y6+=10;
+								for (var ee = 0; ee < 1; ee++)
+								{
+									circulos(x7,y7);
+									x7-=10;
+									y7+=10;
+									for (var ii = 0; ii< 1; ii++)
+									{	
+										circulos(x8,y8);
+										x8-=10;
+										y8+=10;
+										for (var oo = 0; oo< 1; oo++)
+										{	
+											circulos(x9,y9);
+											x9-=10;
+											y9+=10;
+											for (var uu = 0; uu< 1; uu++)
+											{	
+												circulos(x10,y10);
+												x10-=10;
+												y10+=10;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+	function circulos(x,y)
+	{
+			c.beginPath();
+			c.fillStyle="#FFD350";
+			c.arc(x, y, 2.5, 0,(Math.PI/180)*360);
+			c.fill();
+	}
+	function triagulos(x0,y0,x1,y1,x2,y2,x3,y3,color)
+	{
+		c.beginPath();
+		c.moveTo(x0,y0);
+		c.lineTo(x1,y1);
+		c.lineTo(x2,y2);
+		c.lineTo(x3,y3);
+		c.lineWidth=2;
+		c.strokeStyle=color;
+		c.stroke();
+	}
+	function cruz(lnx1,lny1,lx1,ly1,lnx2,lny2,lx2,ly2,color)
+	{
+		c.beginPath();
+		c.moveTo(lnx1,lny1);
+		c.lineTo(lx1,ly1);
+		c.lineCap="butt";
+		c.moveTo(lnx2,lny2);
+		c.lineTo(lx2,ly2);
+		c.lineWidth=13;
+		c.strokeStyle=color;
+		c.stroke();
+	}
+	function linea_Round(x1,x2,x3,x4,color)
+	{
+		c.beginPath();
+		c.moveTo(x1,x2);
+		c.lineTo(x3,x4);
+		c.lineCap="round";
+		c.lineWidth=4.5;
+		c.strokeStyle=color;
+		c.stroke();
+	}
+	function semi_amarillo1()
+	{
+		c.beginPath();
+		c.moveTo(630,240);
+		c.fillStyle="#FFD350";
+		c.quadraticCurveTo(566,350,630,420);
+		c.lineTo(630,240);
+		c.fill();
+	}
+	function semi_amarillo2()
+	{
+		c.beginPath();
+		c.moveTo(223,0);
+		c.quadraticCurveTo(222,7,219,20);
+		c.bezierCurveTo(220,210,550,60,630,210);
+		c.lineTo(630,-5);
+		c.lineTo(230,0);
+		c.fillStyle="#FFD350";
+		c.fill();
+	}
+
+	function dibujar()
+	{
+	esquinaAzul();
+	circulo_borde(128,419,60,"#FEE63E",30);
+	conjuntos_circulos();
+	circulo_relleno(70,65,16,"white");
+	circulo_borde(42,326,2,"#FEE63E",30);
+	circulo_relleno(80,340,3,"#FEE63E");	
+	circulo_relleno(300,485,13,"#FEE63E");
+	circulo_borde(470,487,1.5,"rgba(0, 181, 246)",30);	
+/**/circulo_relleno(570,370,13,"#FEE63E");
+	circulo_relleno(355,380,16,"white");
+	circulo_relleno(378,495,3.5,"white");
+	circulo_relleno(480,200,3.5,"white");
+/**/circulo_borde(563,155,1.5,"#FEE63E",25);
+	triagulos(350,120,410,100,400,160,350,119,"#F4F3F8");
+	triagulos(360,140,420,120,410,180,360,139,"#66BED6");
+	triagulos(355,420,398,410,390,450,355,419,"#F4F3F8");
+	triagulos(360,435,403,425,395,465,360,434,"#66BED6");
+	circulo_borde(650,10,4,"whites",170);
+	linea_Round(30,425,-90,570,"#67EDDF");
+	linea_Round(40,437,107,355,"#67EDDF");
+	linea_Round(160,580,230,500,"#67EDDF");
+	linea_Round(70,650,153,550,"#67EDDF");
+	linea_Round(500,140,432,225,"#67EDDF");
+	linea_Round(520,100,453,180,"#67EDDF");
+	linea_Round(560,260,490,345,"#67EDDF");
+	linea_Round(670,150,560,280,"#67EDDF");
+	semi_amarillo1();
+	semi_amarillo2();
+	cruz(460,40,460,80,440,60,480,60,"white");
+	cruz(460,440,460,490,440,470,480,470,"white");
+	circulo_borde(210,8,4,"#FEE63E",190);
+	}
+	dibujar();
+	circulo_borde(660,16,4.5,"white",180);
+</script>
+</body>
+</html>

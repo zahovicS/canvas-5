@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+	<style type="text/css">
+		canvas{
+			border: solid;
+			/*no estilisar canvas con css, estilisar con js*/
+		}
+	</style>
+</head>
+<body>
+	<canvas></canvas><!--300 ancho y alto 150-->
+<script type="text/javascript">
+	let canva=document.querySelector("canvas");
+	let c=canva.getContext("2d");
+	canva.width=500;
+	canva.height=400;
+	/*
+	c.beginPath();
+	c.strokeStyle="red";
+	c.arc(150,75,70,0,Math.PI/180*360);
+	c.stroke();
+
+	c.beginPath();
+	c.fillStyle="purple";
+	c.rect(0,0,150,20);
+	c.fill();
+
+	c.beginPath();
+	c.lineWidth=20;
+	c.lineCap="round"; //but,round,square
+	c.moveTo(150,75);
+	c.lineTo(280,75);
+	c.stroke();
+*/
+	c.moveTo(20,20);
+	c.bezierCurveTo(20,100,200,100,200,20);
+
+	c.stroke();
+</script>
+</body>
+</html>

@@ -219,7 +219,40 @@
 		c.fillStyle="#FFD350";
 		c.fill();
 	}
+	function round_borde()
+	{
+		//width 310
+		//height 300
+		c.beginPath();
+		c.moveTo(212,252);
+		c.lineTo(410,252);
+		c.bezierCurveTo(490,245,490,355,410,350);
+		c.lineTo(212,350);
+		c.bezierCurveTo(140,345,140,255,212,252);
+		c.lineCap="round";
+		c.lineWidth=4;
+		c.stroke();
+	}
+	function round_relleno()
+	{
+		//width 310
+		//height 300
+		c.beginPath();
+		c.fillStyle="white";
+		c.moveTo(222,265);
+		c.lineTo(400,265);
+		c.bezierCurveTo(470,260,470,340,400,339);
+		c.lineTo(222,339);
+		c.bezierCurveTo(160,335,160,265,222,265);
+		c.fill();
+		c.fillStyle="#120644";
+		c.font="bolder 35px Verdana";
+		c.fillText("ABSTRACT",212,310);
+		c.font="10px verdana";
+		c.fillText("B A C K G R O U N D",262,325);
 
+		
+	}
 	function dibujar()
 	{
 	esquinaAzul();
@@ -254,6 +287,8 @@
 	cruz(460,375,460,415,440,395,480,395,"rgba(0, 181, 246)");
 	circulo_borde(210,8,4,"#FEE63E",190);
 	circulo_borde(660,16,4.5,"white",180);
+	round_borde();
+	round_relleno();
 	}
 	dibujar();
 </script>

@@ -24,22 +24,6 @@
 			return (Math.PI/180)*x;
 		}
 
-	function DCurva()
-	{	
-		c.beginPath();
-		c.moveTo(350,300);
-		c.strokeStyle="white";
-									 //|no tocar|
-		c.bezierCurveTo(380,330,420,290,390,260);	
-		c.bezierCurveTo(370,220,415,200,440,220);
-		c.bezierCurveTo(470,250,505,220,490,180);
-		c.bezierCurveTo(470,140,510,120,540,140);
-		c.quadraticCurveTo(560, 145, 570, 130);
-
-		c.lineWidth=8;
-		c.lineCap="round";
-		c.stroke();
-	}
 	function circulo_borde(x,y,radx,color,grosor)
 	{
 		c.beginPath();
@@ -56,7 +40,7 @@
 		c.fill();
 	}
 
-	function gusano()
+	function gusano1()
 	{
 		c.beginPath();
   		c.moveTo(65, 210);
@@ -69,9 +53,29 @@
   		c.strokeStyle="#69EDDF";
   		c.stroke();
 	}
-	function gusanos()
+	function gusano2()
 	{
-		
+		c.beginPath();
+  		c.moveTo(15, 600);
+  		c.bezierCurveTo(20,590,0,560,40,560);
+  		c.bezierCurveTo(60,560,75,535,60,518);
+  		c.quadraticCurveTo(50,500,62,490);
+  		c.lineCap="round";
+  		c.lineWidth=8	;
+  		c.strokeStyle="white";
+  		c.stroke();
+	}
+	function gusano3()
+	{
+		c.beginPath();
+  		c.moveTo(500, 260);
+  		c.lineCap="round";
+  		c.lineTo(507,255);
+  		c.bezierCurveTo(545,260,530,230,532,230);
+  		c.bezierCurveTo(530,220,530,200,562,205);
+  		c.lineWidth=8;
+  		c.strokeStyle="white";
+  		c.stroke();
 	}
 	function esquinaAzul()
 	{
@@ -355,43 +359,44 @@
 	}
 	function dibujar()
 	{
-	esquinaAzul();
-	circulo_borde(110,422	,60,"#FEE63E",30);
-	conjuntos_circulos();
-	circulo_relleno(70,65,16,"white");
-	circulo_borde(42,276,2,"#FEE63E",30);
-	circulo_relleno(85,287,3,"#FEE63E");	
-	circulo_relleno(265,485,13,"#FEE63E");
-	circulo_borde(455,510,1.8,"rgba(0, 181, 246)",30);	
-	circulo_relleno(570,370,13,"#FFD350");
-	circulo_relleno(354,400,14,"white");
-	circulo_relleno(373,500,3.5,"white");
-	circulo_relleno(480,225,3.5,"white");
-	circulo_borde(563,155,1.5,"#FEE63E",25);
-	triagulos(340,160,410,140,400,210,340,159,"#F4F3F8",2.8);
-	triagulos(350,180,416,160,407,230,350,179,"#66BED6",2.8);
-	triagulos(355,440,398,430,390,470,355,439,"#F4F3F8",1.8);
-	triagulos(360,455,403,445,395,485,360,454,"#66BED6",1.8);
-	//circulo_borde(650,10,4,"whites",170);
-	linea_Round(35,360,-90,500,"#67EDDF",4);
-	linea_Round(47,368,110,300,"#67EDDF",4);
-	linea_Round(125,580,200,500,"#67EDDF",4);
-	linea_Round(30,650,120,550,"#67EDDF",4);
-	linea_Round(490,180,432,240,"#67EDDF",4);
-	linea_Round(500,150,443,210,"#67EDDF",4);
-	linea_Round(550,280,490,345,"#67EDDF",4);
-	linea_Round(690,150,542,305,"#67EDDF",4);
-	semi_amarillo1();
-	semi_amarillo2();
-	cruz(460,40,460,80,440,60,480,60,"white");
-	cruz(460,375,460,415,440,395,480,395,"rgba(0, 181, 246)");
-	circulo_borde(210,8,4,"#FEE63E",190);
-	circulo_borde(660,16,4.5,"white",180);
-	round_borde();
-	round_relleno();
-	conjuntos_circulos2();
-	cruz(286,222,243,222,265,243,265,200,"#FEE63E");
-	gusano();
+		esquinaAzul();
+		circulo_borde(110,422	,60,"#FEE63E",30);
+		conjuntos_circulos();
+		circulo_relleno(70,65,16,"white");
+		circulo_borde(42,276,2,"#FEE63E",30);
+		circulo_relleno(85,287,3,"#FEE63E");	
+		circulo_relleno(265,485,13,"#FEE63E");
+		circulo_borde(455,510,1.8,"rgba(0, 181, 246)",30);	
+		circulo_relleno(570,370,13,"#FFD350");
+		circulo_relleno(354,400,14,"white");
+		circulo_relleno(373,500,3.5,"white");
+		circulo_relleno(480,225,3.5,"white");
+		circulo_borde(563,155,1.5,"#FEE63E",25);
+		triagulos(340,160,410,140,400,210,340,159,"#F4F3F8",2.8);
+		triagulos(350,180,416,160,407,230,350,179,"#66BED6",2.8);
+		triagulos(355,440,398,430,390,470,355,439,"#F4F3F8",1.8);
+		triagulos(360,455,403,445,395,485,360,454,"#66BED6",1.8);
+		linea_Round(35,360,-90,500,"#67EDDF",4);
+		linea_Round(47,368,110,300,"#67EDDF",4);
+		linea_Round(125,580,200,500,"#67EDDF",4);
+		linea_Round(30,650,120,550,"#67EDDF",4);
+		linea_Round(490,180,432,240,"#67EDDF",4);
+		linea_Round(500,150,443,210,"#67EDDF",4);
+		linea_Round(550,280,490,345,"#67EDDF",4);
+		linea_Round(690,150,542,305,"#67EDDF",4);
+		semi_amarillo1();
+		semi_amarillo2();
+		cruz(460,40,460,80,440,60,480,60,"white");
+		cruz(460,375,460,415,440,395,480,395,"rgba(0, 181, 246)");
+		circulo_borde(210,8,4,"#FEE63E",190);
+		circulo_borde(660,16,4.5,"white",180);
+		round_borde();
+		round_relleno();
+		conjuntos_circulos2();
+		cruz(286,222,243,222,265,243,265,200,"#FEE63E");
+		gusano1();
+		gusano2();
+		gusano3();
 	}
 	dibujar();
 </script>
